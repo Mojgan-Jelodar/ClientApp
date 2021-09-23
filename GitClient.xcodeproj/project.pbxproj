@@ -22,8 +22,13 @@
 		0922D2AC26FB8F8E0041C0F8 /* GithubConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0922D2AB26FB8F8E0041C0F8 /* GithubConstants.swift */; };
 		0922D2B026FB955D0041C0F8 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0922D2AF26FB955D0041C0F8 /* LoginRouter.swift */; };
 		0922D2B226FB958F0041C0F8 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0922D2B126FB958F0041C0F8 /* LoginBuilder.swift */; };
+		0956395426FC667F00C078DF /* GitHubAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956395326FC667F00C078DF /* GitHubAuthenticator.swift */; };
+		0956395826FC74E800C078DF /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956395726FC74E800C078DF /* UserApi.swift */; };
+		0956395A26FC752000C078DF /* UserApi+Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956395926FC752000C078DF /* UserApi+Moya.swift */; };
+		0956395D26FC7B9B00C078DF /* DeepLinkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956395C26FC7B9B00C078DF /* DeepLinkData.swift */; };
+		0956396026FCA1C300C078DF /* AuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956395F26FCA1C300C078DF /* AuthorizeRequest.swift */; };
+		0956396226FCA7CD00C078DF /* QueryParamEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956396126FCA7CD00C078DF /* QueryParamEncoder.swift */; };
 		09CB782B26FBBAD70074CC50 /* NotificationCenter+OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB782A26FBBAD70074CC50 /* NotificationCenter+OAuth.swift */; };
-		09CB782D26FBBB920074CC50 /* SafariViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB782C26FBBB920074CC50 /* SafariViewControllerDelegate.swift */; };
 		09CB783026FBCA920074CC50 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB782F26FBCA920074CC50 /* Logger.swift */; };
 		09CB783226FBCB040074CC50 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB783126FBCB040074CC50 /* Loggable.swift */; };
 		09CB783A26FBCFB70074CC50 /* CombineMoyaNetworkExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB783926FBCFB70074CC50 /* CombineMoyaNetworkExecuter.swift */; };
@@ -80,8 +85,13 @@
 		0922D2AB26FB8F8E0041C0F8 /* GithubConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubConstants.swift; sourceTree = "<group>"; };
 		0922D2AF26FB955D0041C0F8 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		0922D2B126FB958F0041C0F8 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
+		0956395326FC667F00C078DF /* GitHubAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAuthenticator.swift; sourceTree = "<group>"; };
+		0956395726FC74E800C078DF /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
+		0956395926FC752000C078DF /* UserApi+Moya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserApi+Moya.swift"; sourceTree = "<group>"; };
+		0956395C26FC7B9B00C078DF /* DeepLinkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkData.swift; sourceTree = "<group>"; };
+		0956395F26FCA1C300C078DF /* AuthorizeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeRequest.swift; sourceTree = "<group>"; };
+		0956396126FCA7CD00C078DF /* QueryParamEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryParamEncoder.swift; sourceTree = "<group>"; };
 		09CB782A26FBBAD70074CC50 /* NotificationCenter+OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+OAuth.swift"; sourceTree = "<group>"; };
-		09CB782C26FBBB920074CC50 /* SafariViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewControllerDelegate.swift; sourceTree = "<group>"; };
 		09CB782F26FBCA920074CC50 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		09CB783126FBCB040074CC50 /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
 		09CB783926FBCFB70074CC50 /* CombineMoyaNetworkExecuter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineMoyaNetworkExecuter.swift; sourceTree = "<group>"; };
@@ -153,6 +163,7 @@
 		0922D26A26FB6E0E0041C0F8 /* GitClient */ = {
 			isa = PBXGroup;
 			children = (
+				0956395B26FC7B8D00C078DF /* DeppLink */,
 				09CB782E26FBCA750074CC50 /* Logger */,
 				0922D2AD26FB94120041C0F8 /* Moudle */,
 				0922D2A326FB721C0041C0F8 /* Generated */,
@@ -240,9 +251,25 @@
 				0922D2AF26FB955D0041C0F8 /* LoginRouter.swift */,
 				0922D2B126FB958F0041C0F8 /* LoginBuilder.swift */,
 				09CB782A26FBBAD70074CC50 /* NotificationCenter+OAuth.swift */,
-				09CB782C26FBBB920074CC50 /* SafariViewControllerDelegate.swift */,
+				0956395326FC667F00C078DF /* GitHubAuthenticator.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		0956395B26FC7B8D00C078DF /* DeppLink */ = {
+			isa = PBXGroup;
+			children = (
+				0956395C26FC7B9B00C078DF /* DeepLinkData.swift */,
+			);
+			path = DeppLink;
+			sourceTree = "<group>";
+		};
+		0956395E26FCA12D00C078DF /* Creditial */ = {
+			isa = PBXGroup;
+			children = (
+				0956395F26FCA1C300C078DF /* AuthorizeRequest.swift */,
+			);
+			name = Creditial;
 			sourceTree = "<group>";
 		};
 		09CB782E26FBCA750074CC50 /* Logger */ = {
@@ -266,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				09CB785126FBE2710074CC50 /* AuthorizationApi.swift */,
+				0956395726FC74E800C078DF /* UserApi.swift */,
 			);
 			path = "API Services";
 			sourceTree = "<group>";
@@ -285,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				09CB785326FBE2D80074CC50 /* AuthorizationApi+Moya.swift */,
+				0956395926FC752000C078DF /* UserApi+Moya.swift */,
 			);
 			path = "API Services + Moya";
 			sourceTree = "<group>";
@@ -313,6 +342,7 @@
 				09CB784026FBD1410074CC50 /* HTTPStatusCode.swift */,
 				0922D2AB26FB8F8E0041C0F8 /* GithubConstants.swift */,
 				09CB785526FBE3380074CC50 /* APIServiceConstants.swift */,
+				0956396126FCA7CD00C078DF /* QueryParamEncoder.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -328,7 +358,8 @@
 		09CB784526FBDD980074CC50 /* Networking Model */ = {
 			isa = PBXGroup;
 			children = (
-				09CB784C26FBDEA30074CC50 /* Authorization */,
+				0956395E26FCA12D00C078DF /* Creditial */,
+				09CB784C26FBDEA30074CC50 /* AccessToken */,
 			);
 			name = "Networking Model";
 			sourceTree = "<group>";
@@ -349,13 +380,13 @@
 			path = Mappable;
 			sourceTree = "<group>";
 		};
-		09CB784C26FBDEA30074CC50 /* Authorization */ = {
+		09CB784C26FBDEA30074CC50 /* AccessToken */ = {
 			isa = PBXGroup;
 			children = (
 				09CB784D26FBDECD0074CC50 /* AccessTokenRequest.swift */,
 				09CB784F26FBE2120074CC50 /* AccessTokenResponse.swift */,
 			);
-			name = Authorization;
+			name = AccessToken;
 			sourceTree = "<group>";
 		};
 		09CB785B26FBEA000074CC50 /* NetworkProvider */ = {
@@ -556,19 +587,24 @@
 				0922D27026FB6E0E0041C0F8 /* ViewController.swift in Sources */,
 				09CB785426FBE2D80074CC50 /* AuthorizationApi+Moya.swift in Sources */,
 				09CB782B26FBBAD70074CC50 /* NotificationCenter+OAuth.swift in Sources */,
+				0956395A26FC752000C078DF /* UserApi+Moya.swift in Sources */,
 				09CB785D26FBEA150074CC50 /* MoyaNetworkManager.swift in Sources */,
 				0922D2B226FB958F0041C0F8 /* LoginBuilder.swift in Sources */,
 				09CB783226FBCB040074CC50 /* Loggable.swift in Sources */,
 				09CB785626FBE3380074CC50 /* APIServiceConstants.swift in Sources */,
 				09CB784326FBDD0A0074CC50 /* AuthorizationManager.swift in Sources */,
 				09CB785F26FBEAB80074CC50 /* ModelMapping.swift in Sources */,
+				0956395D26FC7B9B00C078DF /* DeepLinkData.swift in Sources */,
+				0956395426FC667F00C078DF /* GitHubAuthenticator.swift in Sources */,
 				09CB783A26FBCFB70074CC50 /* CombineMoyaNetworkExecuter.swift in Sources */,
-				09CB782D26FBBB920074CC50 /* SafariViewControllerDelegate.swift in Sources */,
+				0956396026FCA1C300C078DF /* AuthorizeRequest.swift in Sources */,
 				09CB784726FBDDC80074CC50 /* AccessToken.swift in Sources */,
 				0922D2B026FB955D0041C0F8 /* LoginRouter.swift in Sources */,
 				0922D26C26FB6E0E0041C0F8 /* AppDelegate.swift in Sources */,
+				0956395826FC74E800C078DF /* UserApi.swift in Sources */,
 				09CB785826FBE4DB0074CC50 /* MoyaAuthorizationManager.swift in Sources */,
 				09CB783E26FBD0E20074CC50 /* Moya+Combine.swift in Sources */,
+				0956396226FCA7CD00C078DF /* QueryParamEncoder.swift in Sources */,
 				0922D26E26FB6E0E0041C0F8 /* SceneDelegate.swift in Sources */,
 				09CB785026FBE2120074CC50 /* AccessTokenResponse.swift in Sources */,
 				09CB784126FBD1410074CC50 /* HTTPStatusCode.swift in Sources */,

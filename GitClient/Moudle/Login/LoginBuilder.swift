@@ -27,9 +27,12 @@ extension Login {
         typealias Input = Void
 
         static func build(with : Input) -> SFSafariViewController {
-            let webView = SFSafariViewController(url: URL(string: APIServiceConstants.baseURL.appending("login/oauth/authorize"))!,
+            var path = APIServiceConstants.baseURL.appending("login/oauth/authorize")
+            let queryParamEncoder = QueryParamEncoder()
+            path.append((try? queryParamEncoder.encode(AuthorizeRequest())) ?? "")
+            let url = URL(string: path)!
+            let webView = SFSafariViewController(url: url ,
                                             configuration: SFSafariViewController.Configuration())
-            webView.delegate = SafariViewControllerDelegate()
             return webView
         }
     }

@@ -34,3 +34,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
+//extension AppDelegate {
+//    func application(_ application: UIApplication, continue userActivity: NSUserActivity,
+//     restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+//        DeepLinkerManager.handleDeepLinkUrl(userActivity.webpageURL)//handleDeepLinkUrl(userActivity.webpageURL)
+//        return true
+//    }
+//
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool{
+//    //first launch after install
+//        DeepLinkerManager.handleDeepLinkUrl(url)
+//        return true
+//    }
+//    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool{
+//    //first launch after install for older iOS version
+//        DeepLinkerManager.handleDeepLinkUrl(url)
+//        return true
+//    }
+//}

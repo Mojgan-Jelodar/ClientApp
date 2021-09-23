@@ -8,6 +8,11 @@
 import Foundation
 import Moya
 
+final class Token {
+    static let shared : Token = Token()
+    var accessToken : String = ""
+}
+let authPlugin = AccessTokenPlugin { _ in Token.shared.accessToken }
 let sharedNetworkProvider = MoyaProvider<MultiTarget>(
     /*
     session: Session(
@@ -15,10 +20,10 @@ let sharedNetworkProvider = MoyaProvider<MultiTarget>(
     ),
     */
     plugins: [
-        NetworkLoggerPlugin(configuration: .init(logOptions: .verbose))
+        NetworkLoggerPlugin(configuration: .init(logOptions: .verbose)),
+        authPlugin
     ]
 )
-
 let sharedMockNetworkProvider = MoyaProvider<MultiTarget>(
     stubClosure: MoyaProvider.immediatelyStub
 )
