@@ -8,5 +8,5 @@
 import Foundation
 protocol ModelMapping {
     associatedtype S : Decodable
-    func mapping() -> S
+    init(object: S)
 }

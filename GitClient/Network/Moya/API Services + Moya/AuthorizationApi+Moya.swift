@@ -9,13 +9,13 @@ import Foundation
 import Moya
 extension AuthorizationApi : TargetType {
     var baseURL: URL {
-        return URL(string: APIServiceConstants.baseURL)!.appendingPathComponent("login/oauth/")
+        return URL(string: APIServiceConstants.gitHubBaseUrl)!.appendingPathComponent("login/oauth/")
     }
 
     var path: String {
         switch self {
         case .accessToken:
-            return "/access_token"
+            return "access_token"
         }
     }
 
@@ -29,11 +29,16 @@ extension AuthorizationApi : TargetType {
     var task: Task {
         switch self {
         case .accessToken(let params):
-            return .requestParameters(parameters: params.dictionary ?? [:], encoding: URLEncoding.queryString)
+            let paramCodable = QueryParamCodable<AccessTokenRequest>()
+            // swiftlint:disable force_try
+            var queryString = try! paramCodable.encode(params)
+            // swiftlint:enable force_try
+            queryString = queryString.replacingOccurrences(of: "?", with: "")
+            return .requestData(queryString.data(using: String.Encoding.utf8) ?? Data() )
         }
     }
 
     var headers: [String : String]? {
-        return nil
+        return ["Accept" : "application/json"]
     }
 }

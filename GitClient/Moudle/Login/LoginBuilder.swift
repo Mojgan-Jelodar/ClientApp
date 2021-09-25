@@ -23,17 +23,26 @@ extension SceneBuilder where Input == Void {
 
 extension Login {
     struct Builder : SceneBuilder {
-        typealias Output = SFSafariViewController
+        typealias Output = LoginVC
         typealias Input = Void
 
-        static func build(with : Input) -> SFSafariViewController {
-            var path = APIServiceConstants.baseURL.appending("login/oauth/authorize")
-            let queryParamEncoder = QueryParamEncoder()
+        static func build(with : Input) -> LoginVC {
+            var path = APIServiceConstants.gitHubBaseUrl + "login/oauth/authorize"
+            let queryParamEncoder = QueryParamCodable<AuthorizeRequest>()
             path.append((try? queryParamEncoder.encode(AuthorizeRequest())) ?? "")
-            let url = URL(string: path)!
-            let webView = SFSafariViewController(url: url ,
-                                            configuration: SFSafariViewController.Configuration())
-            return webView
+            let vc = LoginVC(url: URL(string: path)!,
+                             configuration: SFSafariViewController.Configuration())
+            let presenter = Login.Presenter()
+            presenter.viewcontroller = vc
+            let interactor = Login.Interactor(storage: KeyChainTokenCaretaker(),
+                                              serviceManager: MoyaAuthorizationManager(),
+                                              presenter: presenter)
+            let router = Login.Router(viewController: vc)
+            router.store = interactor
+
+            vc.interactor = interactor
+            vc.router = router
+            return vc
         }
     }
 

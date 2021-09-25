@@ -8,10 +8,6 @@
 import Foundation
 import Combine
 
-final class GithubDeepLinkData: ObservableObject {
- @Published var somevar:String  = "code"
-
-}
 extension URL {
  func valueOf(_ queryParamaterName: String) -> String? {
     guard let url = URLComponents(string: self.absoluteString) else { return nil }
@@ -19,13 +15,12 @@ extension URL {
  }
 }
 
-
-struct DeepLinkerManager {
-    private init(){}
-    static func handleDeepLinkUrl(_ url: URL?){
+extension SceneDelegate {
+    func handleDeepLinkUrl(_ url: URL?) {
      guard let url = url else {return}
-     if let source = url.valueOf(GithubDeepLinkData().somevar) {
-        
-     }
+     if let code = url.valueOf("code"),
+        let loginVC = self.window?.rootViewController as? LoginVC {
+            loginVC.interactor?.requestForAccessToken(code: code)
+        }
     }
 }

@@ -6,9 +6,14 @@
 //
 
 import Foundation
-struct AccessTokenResponse {
+struct AccessTokenResponse : Codable {
+    var asccessToken : String
+    var tokenType : String
+    var scope : String
 
-}
-extension AccessTokenResponse : Decodable {
-
+    enum CodingKeys : String,CodingKey {
+        case asccessToken = "access_token"
+        case tokenType = "token_type"
+        case scope = "scope"
+    }
 }

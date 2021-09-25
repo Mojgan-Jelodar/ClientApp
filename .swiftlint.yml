@@ -9,7 +9,7 @@ excluded:
   
 line_length:
     warning: 180
-    error: 220
+    error: 400
     ignores_comments: true
     
 identifier_name:

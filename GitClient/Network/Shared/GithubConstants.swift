@@ -7,8 +7,6 @@
 
 import Foundation
 struct GithubConstants {
-    static let authorizeUrl = "https://github.com/login/oauth/authorize"
-    static let accessTokenUrl = "https://github.com/login/oauth/access_token"
     static let clientId = "7585078a1d8e1607ad8e"
     static let clienrSecret = "437467bfda2578e17cad27749973da2895f22fee"
     static let scope = "read:user,user:email,repo"

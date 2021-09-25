@@ -13,7 +13,7 @@ struct AuthorizeRequest : Codable {
     let redirectUri : String
     let state : String
     let responseType : String
-    
+
     enum CodingKeys : String,CodingKey {
         case clientId =  "client_id"
         case secretKey =  "String"
@@ -22,7 +22,7 @@ struct AuthorizeRequest : Codable {
         case state = "state"
         case responseType = "response_type"
     }
-    
+
     init(clientId : String = GithubConstants.clientId,
          secretKey : String = GithubConstants.clienrSecret,
          scope : String = GithubConstants.scope,

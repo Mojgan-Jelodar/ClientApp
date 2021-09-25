@@ -20,12 +20,12 @@ struct MoyaCombineNetworkExecuter : Loggable {
 
     func makeNetworkRequestForAPIService(service: TargetType, networkProvider: MoyaProvider<MultiTarget>) -> AnyPublisher<Data, Error> {
         let tokenSubject =  authenticator.tokenSubject()
-        return tokenSubject.share().flatMap(maxPublishers : .max(1)) { _ in
+        return tokenSubject.flatMap(maxPublishers : .unlimited) { _ in
             return networkProvider.requestPublisher(MultiTarget(service))
                 .share()
                 .catch { error -> AnyPublisher<Result<Response, Error>, Error> in
                 let statusCode : HTTPStatusCode = (error.response?.response?.status ?? .ok)
-                    self.logger?.trace(request: error.response?.request , error: error)
+                self.logger?.trace(request: error.response?.request , error: error)
                 switch statusCode {
                 case .serviceUnavailable,.tooManyRequests :
                     return Fail(error: error)

@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var token = try? keyChainTokenManager.load()
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
@@ -49,15 +50,15 @@ extension SceneDelegate {
         window.rootViewController = Login.Builder.build()
         self.window = window
         window.makeKeyAndVisible()
-        DeepLinkerManager.handleDeepLinkUrl(connectionOptions.urlContexts.first?.url)
-        DeepLinkerManager.handleDeepLinkUrl(connectionOptions.userActivities.first?.webpageURL)
+        self.handleDeepLinkUrl(connectionOptions.urlContexts.first?.url)
+        self.handleDeepLinkUrl(connectionOptions.userActivities.first?.webpageURL)
     }
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         //first launch after install
-        DeepLinkerManager.handleDeepLinkUrl(URLContexts.first?.url)
+        self.handleDeepLinkUrl(URLContexts.first?.url)
     }
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
         //when in background mode
-        DeepLinkerManager.handleDeepLinkUrl(userActivity.webpageURL)
+        self.handleDeepLinkUrl(userActivity.webpageURL)
     }
 }

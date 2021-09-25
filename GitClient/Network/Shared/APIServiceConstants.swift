@@ -8,6 +8,9 @@
 import Foundation
 struct APIServiceConstants {
     static var baseURL:String {
+        return "https://api.github.com/"
+    }
+    static var gitHubBaseUrl: String {
         return "https://github.com/"
     }
 }
