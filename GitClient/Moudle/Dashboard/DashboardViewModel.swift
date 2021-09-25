@@ -7,9 +7,16 @@
 
 import Foundation
 extension Dashboard {
-    final class ViewModel {
-        var user : User?
-        var repos : [Repo]?
-        var message : String = ""
+    struct ReposViewModel {
+        let repos : [Repo]?
+    }
+    struct ErrorViewModel {
+        let title: String?
+        let message: String?
+        let buttonTitles: [String]?
+    }
+
+    struct UserViewModel {
+        let user : User?
     }
 }

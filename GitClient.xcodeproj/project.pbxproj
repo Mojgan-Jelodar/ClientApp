@@ -44,6 +44,14 @@
 		09392D8E26FF179300871106 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09392D8D26FF179300871106 /* LoginPresenter.swift */; };
 		09392D9026FF186E00871106 /* LoginVewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09392D8F26FF186E00871106 /* LoginVewModel.swift */; };
 		09392D9226FF36B200871106 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09392D9126FF36B200871106 /* UIViewController+Alert.swift */; };
+		09392D9426FF4CE000871106 /* MoyaUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09392D9326FF4CE000871106 /* MoyaUserManager.swift */; };
+		09392D9626FF4D1700871106 /* MoyaRepoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09392D9526FF4D1700871106 /* MoyaRepoManager.swift */; };
+		09392D9926FF66E600871106 /* Shared.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 09392D9826FF66E600871106 /* Shared.stringsdict */; };
+		09392D9B26FF751500871106 /* UIViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09392D9A26FF751500871106 /* UIViewController+Delegate.swift */; };
+		09392D9D26FF777200871106 /* ProfileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09392D9C26FF777200871106 /* ProfileTableCell.swift */; };
+		09392DA026FF77D600871106 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09392D9F26FF77D600871106 /* SnapKit */; };
+		09392DA326FF77FF00871106 /* LayoutConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09392DA226FF77FF00871106 /* LayoutConstant.swift */; };
+		09392DA626FF78CA00871106 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 09392DA526FF78CA00871106 /* Kingfisher */; };
 		093E3DAB26FDC5B6007C2743 /* DsahboarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093E3DAA26FDC5B6007C2743 /* DsahboarPresenter.swift */; };
 		0956395826FC74E800C078DF /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956395726FC74E800C078DF /* UserApi.swift */; };
 		0956395A26FC752000C078DF /* UserApi+Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956395926FC752000C078DF /* UserApi+Moya.swift */; };
@@ -52,7 +60,7 @@
 		0956396226FCA7CD00C078DF /* QueryParamCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956396126FCA7CD00C078DF /* QueryParamCodable.swift */; };
 		0956396A26FCFC0500C078DF /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956396926FCFC0500C078DF /* DashboardInteractor.swift */; };
 		0956396C26FCFC6F00C078DF /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956396B26FCFC6F00C078DF /* DashboardRouter.swift */; };
-		0956396E26FCFCDC00C078DF /* DashboardProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956396D26FCFCDC00C078DF /* DashboardProtocols.swift */; };
+		0956396E26FCFCDC00C078DF /* DashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956396D26FCFCDC00C078DF /* DashboardBuilder.swift */; };
 		09CB783026FBCA920074CC50 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB782F26FBCA920074CC50 /* Logger.swift */; };
 		09CB783226FBCB040074CC50 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB783126FBCB040074CC50 /* Loggable.swift */; };
 		09CB783A26FBCFB70074CC50 /* CombineMoyaNetworkExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB783926FBCFB70074CC50 /* CombineMoyaNetworkExecuter.swift */; };
@@ -71,6 +79,9 @@
 		09CB785A26FBE8E80074CC50 /* Encodable+Dict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB785926FBE8E80074CC50 /* Encodable+Dict.swift */; };
 		09CB785D26FBEA150074CC50 /* MoyaNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB785C26FBEA150074CC50 /* MoyaNetworkManager.swift */; };
 		09CB785F26FBEAB80074CC50 /* ModelMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB785E26FBEAB80074CC50 /* ModelMapping.swift */; };
+		09F9B7BF26FF9FF80003085B /* Dashboard.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 09F9B7BE26FF9FF70003085B /* Dashboard.stringsdict */; };
+		09F9B7C126FFBAF10003085B /* RepoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F9B7C026FFBAF10003085B /* RepoRequest.swift */; };
+		09F9B7C526FFC7520003085B /* RepoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F9B7C426FFC7520003085B /* RepoTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +142,12 @@
 		09392D8D26FF179300871106 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		09392D8F26FF186E00871106 /* LoginVewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVewModel.swift; sourceTree = "<group>"; };
 		09392D9126FF36B200871106 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		09392D9326FF4CE000871106 /* MoyaUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaUserManager.swift; sourceTree = "<group>"; };
+		09392D9526FF4D1700871106 /* MoyaRepoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaRepoManager.swift; sourceTree = "<group>"; };
+		09392D9826FF66E600871106 /* Shared.stringsdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.stringsdict; path = Shared.stringsdict; sourceTree = "<group>"; };
+		09392D9A26FF751500871106 /* UIViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Delegate.swift"; sourceTree = "<group>"; };
+		09392D9C26FF777200871106 /* ProfileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableCell.swift; sourceTree = "<group>"; };
+		09392DA226FF77FF00871106 /* LayoutConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstant.swift; sourceTree = "<group>"; };
 		093E3DAA26FDC5B6007C2743 /* DsahboarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DsahboarPresenter.swift; sourceTree = "<group>"; };
 		0956395726FC74E800C078DF /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		0956395926FC752000C078DF /* UserApi+Moya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserApi+Moya.swift"; sourceTree = "<group>"; };
@@ -139,7 +156,7 @@
 		0956396126FCA7CD00C078DF /* QueryParamCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryParamCodable.swift; sourceTree = "<group>"; };
 		0956396926FCFC0500C078DF /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
 		0956396B26FCFC6F00C078DF /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
-		0956396D26FCFCDC00C078DF /* DashboardProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardProtocols.swift; sourceTree = "<group>"; };
+		0956396D26FCFCDC00C078DF /* DashboardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardBuilder.swift; sourceTree = "<group>"; };
 		09CB782F26FBCA920074CC50 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		09CB783126FBCB040074CC50 /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
 		09CB783926FBCFB70074CC50 /* CombineMoyaNetworkExecuter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineMoyaNetworkExecuter.swift; sourceTree = "<group>"; };
@@ -158,6 +175,9 @@
 		09CB785926FBE8E80074CC50 /* Encodable+Dict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Dict.swift"; sourceTree = "<group>"; };
 		09CB785C26FBEA150074CC50 /* MoyaNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaNetworkManager.swift; sourceTree = "<group>"; };
 		09CB785E26FBEAB80074CC50 /* ModelMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMapping.swift; sourceTree = "<group>"; };
+		09F9B7BE26FF9FF70003085B /* Dashboard.stringsdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.stringsdict; path = Dashboard.stringsdict; sourceTree = "<group>"; };
+		09F9B7C026FFBAF10003085B /* RepoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoRequest.swift; sourceTree = "<group>"; };
+		09F9B7C426FFC7520003085B /* RepoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,8 +186,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0922D2A826FB74A70041C0F8 /* Moya in Frameworks */,
+				09392DA026FF77D600871106 /* SnapKit in Frameworks */,
 				0922D2A026FB6F440041C0F8 /* Rswift in Frameworks */,
 				0922D2AA26FB74A70041C0F8 /* CombineMoya in Frameworks */,
+				09392DA626FF78CA00871106 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +233,8 @@
 		0922D26A26FB6E0E0041C0F8 /* GitClient */ = {
 			isa = PBXGroup;
 			children = (
+				09392DA126FF77EA00871106 /* Constant */,
+				09392D9726FF669900871106 /* Resource */,
 				09392D7C26FEF2F500871106 /* Common */,
 				0922D2AD26FB94120041C0F8 /* Moudle */,
 				0922D2A326FB721C0041C0F8 /* Generated */,
@@ -221,7 +245,6 @@
 				0922D26D26FB6E0E0041C0F8 /* SceneDelegate.swift */,
 				0922D26F26FB6E0E0041C0F8 /* ViewController.swift */,
 				0922D27126FB6E0E0041C0F8 /* Main.storyboard */,
-				0922D27426FB6E0F0041C0F8 /* Assets.xcassets */,
 				0922D27626FB6E0F0041C0F8 /* LaunchScreen.storyboard */,
 				0922D27926FB6E0F0041C0F8 /* Info.plist */,
 			);
@@ -273,6 +296,7 @@
 			children = (
 				09CB785926FBE8E80074CC50 /* Encodable+Dict.swift */,
 				09392D9126FF36B200871106 /* UIViewController+Alert.swift */,
+				09392D9A26FF751500871106 /* UIViewController+Delegate.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -320,6 +344,7 @@
 			children = (
 				092B6FCC26FE1E8B0036C859 /* RepoResponse.swift */,
 				092B6FD626FE235B0036C859 /* RepoDetailResponse.swift */,
+				09F9B7C026FFBAF10003085B /* RepoRequest.swift */,
 			);
 			name = Repo;
 			sourceTree = "<group>";
@@ -352,6 +377,24 @@
 			path = Plugin;
 			sourceTree = "<group>";
 		};
+		09392D9726FF669900871106 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				09F9B7BE26FF9FF70003085B /* Dashboard.stringsdict */,
+				09392D9826FF66E600871106 /* Shared.stringsdict */,
+				0922D27426FB6E0F0041C0F8 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		09392DA126FF77EA00871106 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				09392DA226FF77FF00871106 /* LayoutConstant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		0956395B26FC7B8D00C078DF /* DeppLink */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,11 +416,13 @@
 			children = (
 				0956396926FCFC0500C078DF /* DashboardInteractor.swift */,
 				0956396B26FCFC6F00C078DF /* DashboardRouter.swift */,
-				0956396D26FCFCDC00C078DF /* DashboardProtocols.swift */,
+				0956396D26FCFCDC00C078DF /* DashboardBuilder.swift */,
 				093E3DAA26FDC5B6007C2743 /* DsahboarPresenter.swift */,
 				092B6FC626FE1C580036C859 /* DashboardViewModel.swift */,
 				092B6FDA26FE249F0036C859 /* Dashboard.swift */,
 				092B6FDC26FE304A0036C859 /* DashboardVC.swift */,
+				09392D9C26FF777200871106 /* ProfileTableCell.swift */,
+				09F9B7C426FFC7520003085B /* RepoTableCell.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -437,6 +482,8 @@
 			isa = PBXGroup;
 			children = (
 				09CB785726FBE4DB0074CC50 /* MoyaAuthorizationManager.swift */,
+				09392D9326FF4CE000871106 /* MoyaUserManager.swift */,
+				09392D9526FF4D1700871106 /* MoyaRepoManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -539,6 +586,8 @@
 				0922D29F26FB6F440041C0F8 /* Rswift */,
 				0922D2A726FB74A70041C0F8 /* Moya */,
 				0922D2A926FB74A70041C0F8 /* CombineMoya */,
+				09392D9F26FF77D600871106 /* SnapKit */,
+				09392DA526FF78CA00871106 /* Kingfisher */,
 			);
 			productName = GitClient;
 			productReference = 0922D26826FB6E0E0041C0F8 /* GitClient.app */;
@@ -614,6 +663,8 @@
 			packageReferences = (
 				0922D29E26FB6F440041C0F8 /* XCRemoteSwiftPackageReference "R.swift" */,
 				0922D2A626FB74A70041C0F8 /* XCRemoteSwiftPackageReference "Moya" */,
+				09392D9E26FF77D600871106 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				09392DA426FF78CA00871106 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 0922D26926FB6E0E0041C0F8 /* Products */;
 			projectDirPath = "";
@@ -632,6 +683,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0922D27826FB6E0F0041C0F8 /* LaunchScreen.storyboard in Resources */,
+				09392D9926FF66E600871106 /* Shared.stringsdict in Resources */,
+				09F9B7BF26FF9FF80003085B /* Dashboard.stringsdict in Resources */,
 				0922D27526FB6E0F0041C0F8 /* Assets.xcassets in Resources */,
 				0922D27326FB6E0E0041C0F8 /* Main.storyboard in Resources */,
 			);
@@ -700,9 +753,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				092B6FDD26FE304A0036C859 /* DashboardVC.swift in Sources */,
+				09392D9B26FF751500871106 /* UIViewController+Delegate.swift in Sources */,
 				092B6FD526FE22F30036C859 /* RepoManager.swift in Sources */,
 				09CB783C26FBCFFF0074CC50 /* Authenticator.swift in Sources */,
 				092B6FCD26FE1E8B0036C859 /* RepoResponse.swift in Sources */,
+				09392D9426FF4CE000871106 /* MoyaUserManager.swift in Sources */,
+				09392D9626FF4D1700871106 /* MoyaRepoManager.swift in Sources */,
 				09392D8E26FF179300871106 /* LoginPresenter.swift in Sources */,
 				09392D7F26FEF31C00871106 /* Persist.swift in Sources */,
 				093E3DAB26FDC5B6007C2743 /* DsahboarPresenter.swift in Sources */,
@@ -730,16 +786,20 @@
 				092B6FDB26FE249F0036C859 /* Dashboard.swift in Sources */,
 				0956395D26FC7B9B00C078DF /* DeepLinkData.swift in Sources */,
 				09CB783A26FBCFB70074CC50 /* CombineMoyaNetworkExecuter.swift in Sources */,
+				09392D9D26FF777200871106 /* ProfileTableCell.swift in Sources */,
 				0956396026FCA1C300C078DF /* AuthorizeRequest.swift in Sources */,
 				09CB784726FBDDC80074CC50 /* AccessToken.swift in Sources */,
+				09F9B7C526FFC7520003085B /* RepoTableCell.swift in Sources */,
 				0922D2B026FB955D0041C0F8 /* LoginRouter.swift in Sources */,
 				09392D9026FF186E00871106 /* LoginVewModel.swift in Sources */,
 				092B6FCA26FE1E630036C859 /* UserResponse.swift in Sources */,
 				0922D26C26FB6E0E0041C0F8 /* AppDelegate.swift in Sources */,
 				09392D9226FF36B200871106 /* UIViewController+Alert.swift in Sources */,
 				092B6FCF26FE1E980036C859 /* User.swift in Sources */,
+				09392DA326FF77FF00871106 /* LayoutConstant.swift in Sources */,
 				092B6FD126FE1EA80036C859 /* Repo.swift in Sources */,
-				0956396E26FCFCDC00C078DF /* DashboardProtocols.swift in Sources */,
+				09F9B7C126FFBAF10003085B /* RepoRequest.swift in Sources */,
+				0956396E26FCFCDC00C078DF /* DashboardBuilder.swift in Sources */,
 				0956395826FC74E800C078DF /* UserApi.swift in Sources */,
 				09CB785826FBE4DB0074CC50 /* MoyaAuthorizationManager.swift in Sources */,
 				0956396A26FCFC0500C078DF /* DashboardInteractor.swift in Sources */,
@@ -1107,6 +1167,22 @@
 				minimumVersion = 15.0.0;
 			};
 		};
+		09392D9E26FF77D600871106 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		09392DA426FF78CA00871106 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1124,6 +1200,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0922D2A626FB74A70041C0F8 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = CombineMoya;
+		};
+		09392D9F26FF77D600871106 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09392D9E26FF77D600871106 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		09392DA526FF78CA00871106 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09392DA426FF78CA00871106 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

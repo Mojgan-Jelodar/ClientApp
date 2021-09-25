@@ -7,12 +7,20 @@
 
 import Foundation
 import Moya
+final class GitHubCredintial {
+    static let shared = GitHubCredintial()
+
+    private let keyChainTokenManager = KeyChainTokenCaretaker()
+    let accessToken : String?
+    private init() {
+      self.accessToken = try? keyChainTokenManager.load()?.accessToken ?? ""
+    }
+}
 let sharedNetworkProvider = MoyaProvider<MultiTarget>(
     plugins: [
         NetworkLoggerPlugin(configuration: .init(logOptions: .verbose)),
         AccessTokenPlugin {_ in
-            ""
-            //GitHubAuthenticator.shared.accessToken ?? ""
+            GitHubCredintial.shared.accessToken ?? ""
         },
         HeaderPlugin()
     ]

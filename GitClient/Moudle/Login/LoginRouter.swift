@@ -11,7 +11,6 @@ enum Login {
 }
 protocol LoginRouterLogic: AnyObject {
     func navigateToDashboard()
-    func show(message : String)
 }
 protocol LoginRouterDataPassing {
     var store : LoginDataStore? { get }
@@ -28,10 +27,6 @@ extension Login {
             let vc = Dashboard.Builder.build(with: store?.accessToken ?? "")
             viewController?.view?.window?.rootViewController = vc
             viewController?.view?.window?.makeKeyAndVisible()
-        }
-
-        func show(message: String) {
-            viewController?.showAlert(withTitle: "", withMessage: message)
         }
     }
 }

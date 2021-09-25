@@ -10,7 +10,6 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var token = try? keyChainTokenManager.load()
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
@@ -47,7 +46,9 @@ extension SceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = Login.Builder.build()
+        window.rootViewController = UINavigationController(rootViewController: (GitHubCredintial.shared.accessToken != nil)
+                                                            ? Dashboard.Builder.build(with: GitHubCredintial.shared.accessToken ?? "")  :
+                                                            Login.Builder.build())
         self.window = window
         window.makeKeyAndVisible()
         self.handleDeepLinkUrl(connectionOptions.urlContexts.first?.url)

@@ -10,15 +10,15 @@ import Combine
 
 protocol DashboardBusinessLogic {
     func getUserProfile()
-    func getAllPublicRepos()
+    func getRepos(username : String)
 }
 
 protocol DashboardDataStore {
-    var repo : Repo? {get set}
+    var repos : [Repo]? {get set}
 }
 extension Dashboard {
     final class Interactor : DashboardBusinessLogic,DashboardDataStore {
-        var repo: Repo?
+        var repos: [Repo]?
 
         private var userManager : UserManager?
         private var repoManager : RepoManager?
@@ -35,7 +35,8 @@ extension Dashboard {
         }
 
         func getUserProfile() {
-            userManager?.getProfile().sink(receiveCompletion: { [weak self] completion in
+            userManager?.getProfile()
+                .sink(receiveCompletion: { [weak self] completion in
                 switch completion {
                 case .finished:
                     break
@@ -44,12 +45,14 @@ extension Dashboard {
                 }
 
             }, receiveValue: { [weak self] response in
+                self?.getRepos(username: response.username)
                 self?.presenter?.fetched(user: .success(value: response))
             }).store(in: &subscriber)
 
         }
-        func getAllPublicRepos() {
-            repoManager?.getRepos().sink(receiveCompletion: { [weak self] completion in
+        internal func getRepos(username : String) {
+            repoManager?.getRepos(params: RepoRequest(username: username))
+                .sink(receiveCompletion: { [weak self] completion in
                 switch completion {
                 case .finished:
                     break
@@ -57,30 +60,10 @@ extension Dashboard {
                     self?.presenter?.fetched(repos: .failure(error: error))
                 }
             }, receiveValue: { [weak self] response in
+                self?.repos = response.map({Repo(object: $0)})
                 self?.presenter?.fetched(repos: .success(value: response))
             }).store(in: &subscriber)
         }
     }
 
 }
-//extension Dashboard.Interactor : DashboardDataStore {
-//    var user: User? {
-//        get {
-//
-//        }
-//        set {
-//
-//        }
-//    }
-//
-//    var repo: [Repo] {
-//        get {
-//
-//        }
-//        set {
-//
-//        }
-//    }
-//
-//
-//}

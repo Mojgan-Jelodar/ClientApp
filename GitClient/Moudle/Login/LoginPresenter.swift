@@ -11,22 +11,22 @@ protocol  LoginPresentationLogic : AnyObject {
 }
 
 protocol LoginDisplayLogic : AnyObject {
-    func show(error : Login.ViewModel)
-    func fetched(token : Login.ViewModel)
+    func show(viewModel : Login.ErrorViewModel)
+    func fetched()
 }
 
 extension Login {
     final class Presenter  : LoginPresentationLogic {
         weak var viewcontroller : LoginDisplayLogic?
-        var viewModel = Login.ViewModel()
+
         func fetched(accessToken: ServiceResult<AccessTokenResponse>) {
             switch accessToken {
             case .failure(let error):
-                viewModel.message = error.localizedDescription
-                viewcontroller?.show(error: viewModel)
-            case .success(let value):
-                viewModel.token = value.asccessToken
-                viewcontroller?.fetched(token: viewModel)
+                viewcontroller?.show(viewModel: Login.ErrorViewModel(title: R.string.shared.errorDialogTitle(),
+                                                                     message: error.localizedDescription,
+                                                                     buttonTitles:[R.string.shared.errorDialogButtonTitle()]))
+            case .success(_):
+                viewcontroller?.fetched()
             }
         }
     }

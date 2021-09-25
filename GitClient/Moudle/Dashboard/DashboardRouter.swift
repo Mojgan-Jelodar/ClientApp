@@ -17,14 +17,11 @@ extension Dashboard {
     final class Router : DashboardRoutingLogic,DashboardDataPassing {
         var dataStore: DashboardDataStore?
         weak var viewcontroller : UIViewController?
-
         init(viewcontroller : UIViewController) {
             self.viewcontroller = viewcontroller
         }
-
         func routeToDetail(id: String) {
            // self.viewcontroller?.show(<#T##vc: UIViewController##UIViewController#>, sender: <#T##Any?#>)
         }
-
     }
 }

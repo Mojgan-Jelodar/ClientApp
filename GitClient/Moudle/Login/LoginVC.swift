@@ -30,12 +30,12 @@ class LoginVC: SFSafariViewController {
 
 }
 extension LoginVC : LoginDisplayLogic {
-    func show(error: Login.ViewModel) {
-        self.router?.show(message: error.message ?? "")
-
+    func show(viewModel: Login.ErrorViewModel) {
+        self.showAlert(withTitle: viewModel.title ?? "",
+                       withMessage: viewModel.message ?? "",
+                       buttonTitle: viewModel.buttonTitles?.first ?? "")
     }
-
-    func fetched(token: Login.ViewModel) {
-        self.router?.navigateToDashboard()
+    func fetched() {
+        router?.navigateToDashboard()
     }
 }

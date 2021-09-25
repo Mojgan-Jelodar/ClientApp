@@ -6,10 +6,10 @@
 //
 
 import Foundation
-struct RepoDetail {
+struct RepositoryDetail {
 
 }
-extension RepoDetail : ModelMapping {
+extension RepositoryDetail : ModelMapping {
     typealias S = RepoDetailResponse
     init(object: RepoDetailResponse) {
         self.init()

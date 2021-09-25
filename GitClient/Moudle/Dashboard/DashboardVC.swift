@@ -10,36 +10,60 @@ import UIKit
 class DashboardVC: UITableViewController {
     var interactor : DashboardBusinessLogic?
     var router : (DashboardRoutingLogic & DashboardDataPassing)?
+    var user : Dashboard.UserViewModel?
+    var repos : Dashboard.ReposViewModel?
+    let profileReuseIdentifier = "\(ProfileTableCell.self)"
+    let repoReuseIdentifier = "\(RepoTableCell.self)"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.getUserProfile()
-        interactor?.getAllPublicRepos()
 
+    }
+    override func loadView() {
+        super.loadView()
+        self.tableView.register(ProfileTableCell.self, forCellReuseIdentifier: profileReuseIdentifier)
+        self.tableView.register(RepoTableCell.self, forCellReuseIdentifier: repoReuseIdentifier)
+        self.tableView.separatorInset = .zero
+        self.tableView.separatorStyle = .singleLine
+        self.tableView.tableFooterView = UIView()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        switch section {
+        case 0:
+        return user != nil ? 1 : 0
+        default:
+            return repos?.repos?.count ?? 0
+        }
     }
 
-    /*
+    // swiftlint:disable force_cast
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        switch indexPath.section {
+        case 0:
+        let cell = tableView.dequeueReusableCell(withIdentifier: profileReuseIdentifier,
+                                                 for: indexPath) as! ProfileTableCell
+        cell.configCell(viewModel: self.user!)
         return cell
+        default:
+        let cell = tableView.dequeueReusableCell(withIdentifier: repoReuseIdentifier, for: indexPath) as! RepoTableCell
+         cell.configCell(viewModel: repos!.repos![indexPath.row])
+        return cell
+        }
     }
-    */
+    // swiftlint:enable force_cast
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -87,13 +111,20 @@ class DashboardVC: UITableViewController {
 
 }
 extension DashboardVC : DashboardDisplayLogic {
-    func show(error : Dashboard.ViewModel) {
-
+    func show(viewModel: Dashboard.ErrorViewModel) {
+        self.showAlert(withTitle: viewModel.title ?? "",
+                       withMessage: viewModel.message ?? "",
+                       buttonTitle: viewModel.buttonTitles?.first ?? "")
     }
-    func show(user : Dashboard.ViewModel) {
 
+    func show(viewModel: Dashboard.UserViewModel) {
+        self.user = viewModel
+        self.tableView.reloadData()
     }
-    func show(repos : Dashboard.ViewModel) {
 
+    func show(viewModel: Dashboard.ReposViewModel) {
+        self.repos = viewModel
+        self.tableView.reloadData()
     }
+
 }

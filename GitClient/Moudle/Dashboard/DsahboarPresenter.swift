@@ -10,15 +10,19 @@ enum ServiceResult<T : Codable> {
     case success(value : T)
     case failure(error : Error)
 }
+enum RepoServiceResult<T : Codable> {
+    case success(value : [T])
+    case failure(error : Error)
+}
 protocol  DashboardPresentationLogic : AnyObject {
     func fetched(user: ServiceResult<UserResponse>)
-    func fetched(repos : ServiceResult<RepoResponse>)
+    func fetched(repos : RepoServiceResult<RepoResponse>)
 }
 
 protocol DashboardDisplayLogic : AnyObject {
-    func show(error : Dashboard.ViewModel)
-    func show(user : Dashboard.ViewModel)
-    func show(repos : Dashboard.ViewModel)
+    func show(viewModel : Dashboard.ErrorViewModel)
+    func show(viewModel : Dashboard.UserViewModel)
+    func show(viewModel : Dashboard.ReposViewModel)
 }
 
 extension Dashboard {
@@ -26,28 +30,27 @@ extension Dashboard {
     final class Presenter : DashboardPresentationLogic {
 
         weak var viewController: DashboardDisplayLogic?
-        private var viewModel : Dashboard.ViewModel = Dashboard.ViewModel()
 
         func fetched(user: ServiceResult<UserResponse>) {
             switch user {
             case .success(let value):
-                viewModel.user = User.init(object: value)
-                viewController?.show(error: self.viewModel)
+                viewController?.show(viewModel: Dashboard.UserViewModel(user: User(object: value)))
             case .failure(let error):
-                viewModel.message = error.localizedDescription
-                viewController?.show(error: self.viewModel)
+                viewController?.show(viewModel: Dashboard.ErrorViewModel(title: R.string.shared.errorDialogTitle(),
+                                                                     message: error.localizedDescription,
+                                                                     buttonTitles: [R.string.shared.errorDialogButtonTitle()]))
             }
 
         }
 
-        func fetched(repos: ServiceResult<RepoResponse>) {
+        func fetched(repos : RepoServiceResult<RepoResponse>) {
             switch repos {
             case .success(let value):
-                //viewModel.repos = RepoResponse.init(object: value)
-                viewController?.show(error: self.viewModel)
+                viewController?.show(viewModel: Dashboard.ReposViewModel(repos: value.map(Repo.init(object:)) ))
             case .failure(let error):
-                viewModel.message = error.localizedDescription
-                viewController?.show(error: self.viewModel)
+                viewController?.show(viewModel: Dashboard.ErrorViewModel(title: R.string.shared.errorDialogTitle(),
+                                                                     message: error.localizedDescription,
+                                                                     buttonTitles: [R.string.shared.errorDialogButtonTitle()]))
             }
         }
 

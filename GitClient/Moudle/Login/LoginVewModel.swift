@@ -7,8 +7,9 @@
 
 import Foundation
 extension Login {
-    class ViewModel {
-        var token : String?
-        var message : String?
+    struct ErrorViewModel {
+        let title: String?
+        let message: String?
+        let buttonTitles: [String]?
     }
 }

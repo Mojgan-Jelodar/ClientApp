@@ -15,10 +15,14 @@ extension Dashboard {
             let vc  = DashboardVC()
             let presenter = Dashboard.Presenter()
             presenter.viewController = vc
-//            let interactor = Dashboard.Interactor(userManager: Moya,
-//                                                  repoManager: <#T##RepoManager#>,
-//                                                  presenter: Presenter)
-//            vc.interactor =
+            let interactor = Dashboard.Interactor(userManager: MoyaUserManager(),
+                                                  repoManager: MoyaRepoManager(),
+                                                  presenter: presenter)
+
+            let router = Dashboard.Router(viewcontroller: vc)
+            router.dataStore = interactor
+            vc.interactor = interactor
+            vc.router = router
             return vc
 
         }

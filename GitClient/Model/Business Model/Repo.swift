@@ -7,12 +7,16 @@
 
 import Foundation
 struct Repo {
-
+    let id : Int
+    let name : String
+    let description : String?
 }
 
 extension Repo : ModelMapping {
     typealias S = RepoResponse
     init(object: RepoResponse) {
-        self.init()
+        self.init(id: object.id,
+                  name: object.name,
+                  description: object.description)
     }
 }

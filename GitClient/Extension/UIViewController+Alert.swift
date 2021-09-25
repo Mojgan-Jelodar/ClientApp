@@ -7,14 +7,12 @@
 
 import UIKit
 extension  UIViewController {
-    func showAlert(withTitle title: String, withMessage message:String) {
+    func showAlert(withTitle title: String,
+                   withMessage message:String,
+                   buttonTitle:String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: { _ in
-        })
-        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: { _ in
-        })
+        let ok = UIAlertAction(title: buttonTitle, style: .default)
         alert.addAction(ok)
-        alert.addAction(cancel)
         DispatchQueue.main.async(execute: {
             self.present(alert, animated: true)
         })

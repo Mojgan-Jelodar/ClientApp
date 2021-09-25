@@ -17,6 +17,7 @@ identifier_name:
   max_length: 30
  
 type_name:
+  min_length: 1
   max_length:
     warning: 50
     

@@ -21,7 +21,9 @@ protocol ReloginView {
 
 struct AppReloginHandler: ReloginView {
     func present() {
-        //todo::
+        let vc = Login.Builder.build()
+        UIViewController.window?.rootViewController = vc
+        UIViewController.window?.makeKeyAndVisible()
     }
 }
 

@@ -7,5 +7,5 @@
 
 import Foundation
 enum RepoApi {
-    case getRepos
+    case getRepos(params : RepoRequest)
 }

@@ -9,20 +9,20 @@ import Foundation
 import Moya
 extension UserApi : TargetType,AccessTokenAuthorizable {
     var baseURL: URL {
-        return URL(string: APIServiceConstants.baseURL)!.appendingPathComponent("user")
+        return URL(string: APIServiceConstants.baseURL)!
     }
 
     var path: String {
         switch self {
         case .getProfile:
-            return "/"
+            return "user"
         }
     }
 
     var method: Moya.Method {
         switch self {
         case .getProfile:
-            return .post
+            return .get
         }
     }
 

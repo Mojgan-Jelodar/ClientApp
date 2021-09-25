@@ -8,8 +8,6 @@
 import Foundation
 import Security
 
-var keyChainTokenManager = KeyChainTokenCaretaker()
-
 protocol Storage {
     var tag : String { get }
     var name : String { get }

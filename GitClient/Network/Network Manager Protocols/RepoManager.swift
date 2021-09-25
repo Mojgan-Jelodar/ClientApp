@@ -8,6 +8,6 @@
 import Foundation
 import Combine
 protocol RepoManager {
-    func getRepos() -> AnyPublisher<RepoResponse,Error>
-    func getRepoDetail(param : Repo) -> AnyPublisher<RepoDetailResponse,Error>
+    func getRepos(params : RepoRequest) -> AnyPublisher<[RepoResponse],Error>
+//    func getRepoDetail(param : Repo) -> AnyPublisher<RepoDetailResponse,Error>
 }
