@@ -32,7 +32,7 @@ Clean Swift (a.k.a VIP) is Uncle Bob’s Clean Architecture applied to iOS and M
 - Router
  - This element is linked to the controller. It takes care of the transition between scenes 
 
-![Vip](https://www.google.com/url?sa=i&url=https%3A%2F%2Fgithub.com%2Fbhardwajpankaj%2FVIP&psig=AOvVaw2lZbKWfDVTMy5g-qy6UC5i&ust=1632776083768000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCJizwIfDnfMCFQAAAAAdAAAAABAD)
+![Vip](https://www.netguru.com/hs-fs/hubfs/894db5a4-4fdf-4928-b887-07836f7ec843.jpeg?width=1604&name=894db5a4-4fdf-4928-b887-07836f7ec843.jpeg)
 
 # Features
 
