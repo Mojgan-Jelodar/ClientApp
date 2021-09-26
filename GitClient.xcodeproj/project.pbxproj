@@ -47,6 +47,8 @@
 		09349A2E2700457100AD9B78 /* RepoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09349A1B2700457100AD9B78 /* RepoRequest.swift */; };
 		09349A2F2700457100AD9B78 /* ModelMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09349A1D2700457100AD9B78 /* ModelMappable.swift */; };
 		09349A302700457100AD9B78 /* ModelMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09349A1E2700457100AD9B78 /* ModelMapping.swift */; };
+		09349A3A2700563E00AD9B78 /* LoginWorkerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09349A392700563E00AD9B78 /* LoginWorkerSpec.swift */; };
+		09349A3C270058FF00AD9B78 /* DashboardWorkerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09349A3B270058FF00AD9B78 /* DashboardWorkerSpec.swift */; };
 		09392D7F26FEF31C00871106 /* Persist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09392D7E26FEF31C00871106 /* Persist.swift */; };
 		09392D8126FEFE8F00871106 /* SecureStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09392D8026FEFE8F00871106 /* SecureStoreError.swift */; };
 		09392D8326FEFEFD00871106 /* SecureStoreQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09392D8226FEFEFD00871106 /* SecureStoreQueryable.swift */; };
@@ -153,6 +155,8 @@
 		09349A1B2700457100AD9B78 /* RepoRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoRequest.swift; sourceTree = "<group>"; };
 		09349A1D2700457100AD9B78 /* ModelMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMappable.swift; sourceTree = "<group>"; };
 		09349A1E2700457100AD9B78 /* ModelMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMapping.swift; sourceTree = "<group>"; };
+		09349A392700563E00AD9B78 /* LoginWorkerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorkerSpec.swift; sourceTree = "<group>"; };
+		09349A3B270058FF00AD9B78 /* DashboardWorkerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardWorkerSpec.swift; sourceTree = "<group>"; };
 		09392D7E26FEF31C00871106 /* Persist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persist.swift; sourceTree = "<group>"; };
 		09392D8026FEFE8F00871106 /* SecureStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStoreError.swift; sourceTree = "<group>"; };
 		09392D8226FEFEFD00871106 /* SecureStoreQueryable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStoreQueryable.swift; sourceTree = "<group>"; };
@@ -281,6 +285,8 @@
 		0922D28126FB6E0F0041C0F8 /* GitClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				09349A382700561700AD9B78 /* Dashboard */,
+				09349A372700560100AD9B78 /* Login */,
 				0922D28226FB6E0F0041C0F8 /* GitClientTests.swift */,
 				0922D28426FB6E0F0041C0F8 /* Info.plist */,
 			);
@@ -434,6 +440,22 @@
 				09349A1E2700457100AD9B78 /* ModelMapping.swift */,
 			);
 			path = Mappable;
+			sourceTree = "<group>";
+		};
+		09349A372700560100AD9B78 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				09349A392700563E00AD9B78 /* LoginWorkerSpec.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		09349A382700561700AD9B78 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				09349A3B270058FF00AD9B78 /* DashboardWorkerSpec.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		09392D7C26FEF2F500871106 /* Common */ = {
@@ -969,7 +991,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09349A3C270058FF00AD9B78 /* DashboardWorkerSpec.swift in Sources */,
 				0922D28326FB6E0F0041C0F8 /* GitClientTests.swift in Sources */,
+				09349A3A2700563E00AD9B78 /* LoginWorkerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1071,6 +1095,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-D TDD";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
