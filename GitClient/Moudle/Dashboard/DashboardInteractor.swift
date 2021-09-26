@@ -20,9 +20,9 @@ extension Dashboard {
     final class Interactor : DashboardBusinessLogic,DashboardDataStore {
         var repos: [Repo]?
 
-        private var userManager : UserManager?
-        private var repoManager : RepoManager?
-        private var presenter : DashboardPresentationLogic?
+        private(set) var userManager : UserManager?
+        private(set) var repoManager : RepoManager?
+        private(set) var presenter : DashboardPresentationLogic?
 
         private var subscriber = Set<AnyCancellable>()
 

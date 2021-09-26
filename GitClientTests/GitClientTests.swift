@@ -5,7 +5,7 @@
 //  Created by Mozhgan on 9/22/21.
 //
 
-import Nimble
+import XCTest
 @testable import GitClient
 
 class GitClientTests: XCTestCase {

@@ -8,14 +8,14 @@
 import Foundation
 import UIKit
 final class RepoTableCell: UITableViewCell {
-    private lazy var nameLbl : UILabel = {
+    private(set) lazy var nameLbl : UILabel = {
         let tmp = UILabel()
         tmp.numberOfLines = 0
         tmp.font = UIFont.systemFont(ofSize: LayoutConstant.Common.fontSize, weight: UIFont.Weight.semibold)
         tmp.lineBreakMode = .byTruncatingTail
         return tmp
     }()
-    private lazy var descriptionLbl : UILabel = {
+    private(set) lazy var descriptionLbl : UILabel = {
         let tmp = UILabel()
         tmp.font = UIFont.systemFont(ofSize: LayoutConstant.Common.fontSize, weight: UIFont.Weight.regular)
         tmp.numberOfLines = 0

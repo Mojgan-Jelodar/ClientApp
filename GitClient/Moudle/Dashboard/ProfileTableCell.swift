@@ -10,26 +10,26 @@ import SnapKit
 import Kingfisher
 
 final class ProfileTableCell: UITableViewCell {
-    private lazy var avatarImgView : UIImageView = {
+    private(set) lazy var avatarImgView : UIImageView = {
         let tmp = UIImageView()
         tmp.contentMode = .scaleAspectFit
         return tmp
     }()
-    private lazy var nameLbl : UILabel = {
+    private(set) lazy var nameLbl : UILabel = {
         let tmp = UILabel()
         tmp.numberOfLines = 0
         tmp.font = UIFont.systemFont(ofSize: LayoutConstant.Common.fontSize, weight: UIFont.Weight.regular)
         tmp.lineBreakMode = .byTruncatingTail
         return tmp
     }()
-    private lazy var emailLbl : UILabel = {
+    private(set) lazy var emailLbl : UILabel = {
         let tmp = UILabel()
         tmp.font = UIFont.systemFont(ofSize: LayoutConstant.Common.fontSize, weight: UIFont.Weight.regular)
         tmp.numberOfLines = 0
         tmp.lineBreakMode = .byTruncatingTail
         return tmp
     }()
-    private lazy var followersLbl : UILabel = {
+    private(set) lazy var followersLbl : UILabel = {
         let tmp = UILabel()
         tmp.numberOfLines = 0
         tmp.textAlignment = .center
@@ -37,7 +37,7 @@ final class ProfileTableCell: UITableViewCell {
         tmp.lineBreakMode = .byTruncatingTail
         return tmp
     }()
-    private lazy var followingLbl : UILabel = {
+    private(set) lazy var followingLbl : UILabel = {
         let tmp = UILabel()
         tmp.numberOfLines = 0
         tmp.textAlignment = .center
@@ -45,7 +45,7 @@ final class ProfileTableCell: UITableViewCell {
         tmp.lineBreakMode = .byTruncatingTail
         return tmp
     }()
-    private lazy var stackView : UIStackView = {
+    private(set) lazy var stackView : UIStackView = {
         let tmp = UIStackView()
         tmp.alignment = .fill
         tmp.axis = .horizontal

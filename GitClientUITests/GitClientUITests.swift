@@ -5,7 +5,7 @@
 //  Created by Mozhgan on 9/22/21.
 //
 
-import Quick
+import XCTest
 
 class GitClientUITests: XCTestCase {
 
