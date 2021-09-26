@@ -26,9 +26,9 @@ extension Dashboard {
 
         private var subscriber = Set<AnyCancellable>()
 
-        init(userManager : UserManager,
-             repoManager : RepoManager,
-             presenter : DashboardPresentationLogic) {
+        init(userManager : UserManager?,
+             repoManager : RepoManager?,
+             presenter : DashboardPresentationLogic?) {
             self.presenter = presenter
             self.userManager = userManager
             self.repoManager = repoManager

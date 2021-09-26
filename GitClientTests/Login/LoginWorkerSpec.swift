@@ -5,13 +5,14 @@
 //  Created by Mozhgan on 9/26/21.
 //
 
-import Quick
-import Nimble
+import XCTest
 
-@testable import GitClientTDD
-class LoginWorkerSpec: QuickSpec {
-    override func spec() {
-
-        //var sut: MainWorker!
+@testable import GitClient
+class LoginWorkerSpec: XCTestCase {
+    override func setUp() {
+        super.setUp()
+    }
+    override func tearDown() {
+        super.tearDown()
     }
 }

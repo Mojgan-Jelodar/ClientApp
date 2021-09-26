@@ -46,7 +46,7 @@ class DashboardWorkerTests : XCTestCase {
         // Given
         let expectation = XCTestExpectation(description: "Fetch User's Repos")
         // When
-        let worker = RepoManagerrSpy()
+        let worker = RepoManagerSpy()
 
         worker.getRepos(params: RepoRequest(username: Seeds.User.login))
             .sink(receiveCompletion: { completion in
@@ -74,7 +74,7 @@ class UserManagerSpy : UserManager {
             .decode(type: UserResponse.self, decoder: JSONDecoder()).eraseToAnyPublisher()
     }
 }
-class RepoManagerrSpy : RepoManager {
+class RepoManagerSpy : RepoManager {
     func getRepos(params: RepoRequest) -> AnyPublisher<[RepoResponse], Error> {
         MoyaCombineNetworkExecuter
             .shared
