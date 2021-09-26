@@ -43,15 +43,14 @@ final class RepoTableCell: UITableViewCell {
         func setNameConstraint() {
             nameLbl.snp.makeConstraints { maker in
                 maker.top.leading.trailing.equalToSuperview().offset(LayoutConstant.Common.margin)
-                maker.centerY.equalToSuperview().priority(.high)
             }
         }
         func setDescriptionConstraint() {
             descriptionLbl.snp.makeConstraints { maker in
                 maker.leading.equalTo(nameLbl.snp.leading).offset(LayoutConstant.Common.margin)
                 maker.trailing.equalToSuperview()
-                maker.top.equalTo(nameLbl.snp.bottom)
-                maker.bottom.equalToSuperview().offset(LayoutConstant.Common.margin)
+                maker.top.equalTo(nameLbl.snp.bottom).offset(LayoutConstant.Common.margin)
+                maker.bottom.equalToSuperview()
             }
         }
         self.contentView.addSubview(descriptionLbl)
