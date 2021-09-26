@@ -36,6 +36,12 @@ extension UserApi : TargetType,AccessTokenAuthorizable {
     var headers: [String : String]? {
         return nil
     }
+    var sampleData: Data {
+        switch self {
+        case .getProfile:
+            return (try? UserResponse.init(fromURL: R.file.userJson()!).jsonData()) ?? Data()//"".data(using: String.Encoding.utf8)!
+        }
+    }
 
     var authorizationType: AuthorizationType? {
         return .bearer

@@ -17,13 +17,12 @@ class DashboardWorkerSpec: QuickSpec {
         beforeEach {
             setupWorker()
         }
-        
+
         afterEach {
             removeNetworkStub()
             sut = nil
         }
-        
-        
+
         describe("fetch user data") {
             typealias UserData = (name: String?, email: String?)
             var actual: UserData = ("", "")
@@ -31,14 +30,14 @@ class DashboardWorkerSpec: QuickSpec {
             beforeEach {
                 // given
                 stubNetwork(as: ["name": Seeds.name, "email": Seeds.email])
-                
+
                 // when
                 sut.fetchUserData(completion: { (name, email) in
                     actual.name = name
                     actual.email = email
                 })
             }
-            
+
             it("should display the fetched user name", closure: {
                 // then
                 expect(actual.name).toEventually(equal(Seeds.name))
@@ -49,26 +48,21 @@ class DashboardWorkerSpec: QuickSpec {
                 expect(actual.email).toEventually(equal(Seeds.email))
             })
         }
-        
-        
-        
-        
-        
+
     }
-    
+
 }
 // MARK: - Test Helpers
 extension DashboardWorkerSpec {
-   
-    
+
     func setupWorker() {
         sut = MainWorker()
     }
-    
+
     func stubNetwork(as response: [String: String] = [:], status: Int = 200) {
         networkStub = stub(everything, json(response, status: status))
     }
-    
+
     func removeNetworkStub() {
         if let stub = networkStub {
             removeStub(stub)

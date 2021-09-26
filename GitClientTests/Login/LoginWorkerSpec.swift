@@ -9,10 +9,10 @@ import Quick
 import Nimble
 import Mockingjay
 
-@testable import GitClient
+@testable import GitClientTDD
 class LoginWorkerSpec: QuickSpec {
     override func spec() {
-        
+
         //var sut: MainWorker!
     }
 }

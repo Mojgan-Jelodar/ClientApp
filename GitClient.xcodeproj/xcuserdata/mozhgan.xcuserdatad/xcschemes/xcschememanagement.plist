@@ -7,7 +7,12 @@
 		<key>GitClient.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>31</integer>
+		</dict>
+		<key>GitClientTDD.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>32</integer>
 		</dict>
 		<key>ReactiveSwift (Playground) 1.xcscheme</key>
 		<dict>
@@ -92,6 +97,24 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>5</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0922D26726FB6E0E0041C0F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0922D27D26FB6E0F0041C0F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0922D28826FB6E0F0041C0F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

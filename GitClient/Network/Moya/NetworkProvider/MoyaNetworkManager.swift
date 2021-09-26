@@ -18,15 +18,15 @@ final class GitHubCredintial {
 }
 
 #if TDD
-    let sharedNetworkProvider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose)),
+   let sharedNetworkProvider = MoyaProvider<MultiTarget>(stubClosure : MoyaProvider.delayedStub(1.0),
+                                                          plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose)),
                                                                     AccessTokenPlugin {_ in
                                                                         GitHubCredintial.shared.accessToken ?? ""
                                                                     },
                                                                     HeaderPlugin()
                                                           ])
 #else
-    let sharedNetworkProvider = MoyaProvider<MultiTarget>(stubClosure :MoyaProvider.delayedStub(1.0),
-                                                          plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose)),
+    let sharedNetworkProvider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose)),
                                                                         AccessTokenPlugin {_ in
                                                                             GitHubCredintial.shared.accessToken ?? ""
                                                                         },
