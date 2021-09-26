@@ -14,6 +14,7 @@ class DashboardVC: UITableViewController {
     var repos : Dashboard.ReposViewModel?
     let profileReuseIdentifier = "\(ProfileTableCell.self)"
     let repoReuseIdentifier = "\(RepoTableCell.self)"
+    let shimmerReuseIdentifier = "\(ShimmerTableViewCell.self)"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class DashboardVC: UITableViewController {
         super.loadView()
         self.tableView.register(ProfileTableCell.self, forCellReuseIdentifier: profileReuseIdentifier)
         self.tableView.register(RepoTableCell.self, forCellReuseIdentifier: repoReuseIdentifier)
+        self.tableView.register(UINib(resource: R.nib.shimmerTableViewCell), forCellReuseIdentifier: shimmerReuseIdentifier)
         self.tableView.separatorInset = .zero
         self.tableView.separatorStyle = .singleLine
         self.tableView.tableFooterView = UIView()
@@ -39,9 +41,9 @@ class DashboardVC: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         switch section {
         case 0:
-        return user != nil ? 1 : 0
+        return 1
         default:
-            return repos?.repos?.count ?? 0
+            return repos?.repos?.count ?? 15
         }
     }
 
@@ -49,21 +51,35 @@ class DashboardVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
+        guard self.user != nil else {
+            return tableView.dequeueReusableCell(withIdentifier: shimmerReuseIdentifier,
+                                                     for: indexPath) as! ShimmerTableViewCell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: profileReuseIdentifier,
-                                                 for: indexPath) as! ProfileTableCell
+                                             for: indexPath) as! ProfileTableCell
         cell.configCell(viewModel: self.user!)
         return cell
         default:
+        guard self.repos != nil else {
+            return tableView.dequeueReusableCell(withIdentifier: shimmerReuseIdentifier,
+                                                     for: indexPath) as! ShimmerTableViewCell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: repoReuseIdentifier, for: indexPath) as! RepoTableCell
-         cell.configCell(viewModel: repos!.repos![indexPath.row])
+        cell.configCell(viewModel: repos!.repos![indexPath.row])
         return cell
         }
     }
     // swiftlint:enable force_cast
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        switch indexPath.section {
+        case 0:
+            return 120.0
+        default:
+            return 45.0
+        }
     }
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

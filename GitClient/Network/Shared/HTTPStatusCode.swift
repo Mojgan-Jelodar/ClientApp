@@ -1,6 +1,5 @@
 //
 //  HttpStatusCode.swift
-//  Blu
 //
 //  Created by jelodar on 6/15/1400 AP.
 //

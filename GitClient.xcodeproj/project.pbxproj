@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09164DE52700A8AE00D31982 /* ShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09164DE42700A8AE00D31982 /* ShimmerView.swift */; };
+		09164DE92700A96C00D31982 /* ShimmerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09164DE72700A96C00D31982 /* ShimmerTableViewCell.swift */; };
+		09164DEA2700A96C00D31982 /* ShimmerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09164DE82700A96C00D31982 /* ShimmerTableViewCell.xib */; };
 		0922D26C26FB6E0E0041C0F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0922D26B26FB6E0E0041C0F8 /* AppDelegate.swift */; };
 		0922D26E26FB6E0E0041C0F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0922D26D26FB6E0E0041C0F8 /* SceneDelegate.swift */; };
-		0922D27026FB6E0E0041C0F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0922D26F26FB6E0E0041C0F8 /* ViewController.swift */; };
-		0922D27326FB6E0E0041C0F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0922D27126FB6E0E0041C0F8 /* Main.storyboard */; };
 		0922D27526FB6E0F0041C0F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0922D27426FB6E0F0041C0F8 /* Assets.xcassets */; };
 		0922D27826FB6E0F0041C0F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0922D27626FB6E0F0041C0F8 /* LaunchScreen.storyboard */; };
 		0922D28326FB6E0F0041C0F8 /* GitClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0922D28226FB6E0F0041C0F8 /* GitClientTests.swift */; };
@@ -65,7 +66,6 @@
 		09349AC4270068B100AD9B78 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB782F26FBCA920074CC50 /* Logger.swift */; };
 		09349AC5270068B100AD9B78 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09349A062700457100AD9B78 /* AccessToken.swift */; };
 		09349AC6270068B100AD9B78 /* GithubConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0922D2AB26FB8F8E0041C0F8 /* GithubConstants.swift */; };
-		09349AC7270068B100AD9B78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0922D26F26FB6E0E0041C0F8 /* ViewController.swift */; };
 		09349AC8270068B100AD9B78 /* AuthorizationApi+Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB785326FBE2D80074CC50 /* AuthorizationApi+Moya.swift */; };
 		09349AC9270068B100AD9B78 /* SecureStoreQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09392D8226FEFEFD00871106 /* SecureStoreQueryable.swift */; };
 		09349ACA270068B100AD9B78 /* UserApi+Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956395926FC752000C078DF /* UserApi+Moya.swift */; };
@@ -126,7 +126,6 @@
 		09349B04270068B100AD9B78 /* Shared.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 09392D9826FF66E600871106 /* Shared.stringsdict */; };
 		09349B05270068B100AD9B78 /* Dashboard.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 09F9B7BE26FF9FF70003085B /* Dashboard.stringsdict */; };
 		09349B06270068B100AD9B78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0922D27426FB6E0F0041C0F8 /* Assets.xcassets */; };
-		09349B07270068B100AD9B78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0922D27126FB6E0E0041C0F8 /* Main.storyboard */; };
 		09349B1027006A9800AD9B78 /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 09349B0F27006A9800AD9B78 /* User.json */; };
 		09349B1127006D8A00AD9B78 /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 09349B0F27006A9800AD9B78 /* User.json */; };
 		09349B162700705500AD9B78 /* Repos.json in Resources */ = {isa = PBXBuildFile; fileRef = 09349B1327006F3F00AD9B78 /* Repos.json */; };
@@ -196,11 +195,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09164DE42700A8AE00D31982 /* ShimmerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimmerView.swift; sourceTree = "<group>"; };
+		09164DE72700A96C00D31982 /* ShimmerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerTableViewCell.swift; sourceTree = "<group>"; };
+		09164DE82700A96C00D31982 /* ShimmerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShimmerTableViewCell.xib; sourceTree = "<group>"; };
 		0922D26826FB6E0E0041C0F8 /* GitClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0922D26B26FB6E0E0041C0F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0922D26D26FB6E0E0041C0F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0922D26F26FB6E0E0041C0F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0922D27226FB6E0E0041C0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0922D27426FB6E0F0041C0F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0922D27726FB6E0F0041C0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0922D27926FB6E0F0041C0F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -341,6 +341,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09164DD227009AE600D31982 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09164DE62700A93F00D31982 /* ShimmerTableCell */,
+				09164DD92700A6FF00D31982 /* Shimmer */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09164DD92700A6FF00D31982 /* Shimmer */ = {
+			isa = PBXGroup;
+			children = (
+				09164DE42700A8AE00D31982 /* ShimmerView.swift */,
+			);
+			path = Shimmer;
+			sourceTree = "<group>";
+		};
+		09164DE62700A93F00D31982 /* ShimmerTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				09164DE72700A96C00D31982 /* ShimmerTableViewCell.swift */,
+				09164DE82700A96C00D31982 /* ShimmerTableViewCell.xib */,
+			);
+			path = ShimmerTableCell;
+			sourceTree = "<group>";
+		};
 		0922D25F26FB6E0E0041C0F8 = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +394,7 @@
 		0922D26A26FB6E0E0041C0F8 /* GitClient */ = {
 			isa = PBXGroup;
 			children = (
+				09164DD227009AE600D31982 /* View */,
 				09349B0E27006A7600AD9B78 /* NetworkMockData */,
 				09349A042700457100AD9B78 /* Model */,
 				09392DA126FF77EA00871106 /* Constant */,
@@ -379,8 +406,6 @@
 				0922D29B26FB6E720041C0F8 /* Network */,
 				0922D26B26FB6E0E0041C0F8 /* AppDelegate.swift */,
 				0922D26D26FB6E0E0041C0F8 /* SceneDelegate.swift */,
-				0922D26F26FB6E0E0041C0F8 /* ViewController.swift */,
-				0922D27126FB6E0E0041C0F8 /* Main.storyboard */,
 				0922D27626FB6E0F0041C0F8 /* LaunchScreen.storyboard */,
 				0922D27926FB6E0F0041C0F8 /* Info.plist */,
 			);
@@ -916,10 +941,10 @@
 				09349B162700705500AD9B78 /* Repos.json in Resources */,
 				0922D27826FB6E0F0041C0F8 /* LaunchScreen.storyboard in Resources */,
 				09392D9926FF66E600871106 /* Shared.stringsdict in Resources */,
+				09164DEA2700A96C00D31982 /* ShimmerTableViewCell.xib in Resources */,
 				09F9B7BF26FF9FF80003085B /* Dashboard.stringsdict in Resources */,
 				0922D27526FB6E0F0041C0F8 /* Assets.xcassets in Resources */,
 				09349B1027006A9800AD9B78 /* User.json in Resources */,
-				0922D27326FB6E0E0041C0F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -947,7 +972,6 @@
 				09349B05270068B100AD9B78 /* Dashboard.stringsdict in Resources */,
 				09349B06270068B100AD9B78 /* Assets.xcassets in Resources */,
 				09349B1127006D8A00AD9B78 /* User.json in Resources */,
-				09349B07270068B100AD9B78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1137,7 +1161,6 @@
 				09CB783026FBCA920074CC50 /* Logger.swift in Sources */,
 				09349A1F2700457100AD9B78 /* AccessToken.swift in Sources */,
 				0922D2AC26FB8F8E0041C0F8 /* GithubConstants.swift in Sources */,
-				0922D27026FB6E0E0041C0F8 /* ViewController.swift in Sources */,
 				09CB785426FBE2D80074CC50 /* AuthorizationApi+Moya.swift in Sources */,
 				09392D8326FEFEFD00871106 /* SecureStoreQueryable.swift in Sources */,
 				0956395A26FC752000C078DF /* UserApi+Moya.swift in Sources */,
@@ -1173,6 +1196,7 @@
 				0956395826FC74E800C078DF /* UserApi.swift in Sources */,
 				09349A2A2700457100AD9B78 /* RepoDetailResponse.swift in Sources */,
 				09CB785826FBE4DB0074CC50 /* MoyaAuthorizationManager.swift in Sources */,
+				09164DE92700A96C00D31982 /* ShimmerTableViewCell.swift in Sources */,
 				09349A2B2700457100AD9B78 /* ReposResponse.swift in Sources */,
 				0956396A26FCFC0500C078DF /* DashboardInteractor.swift in Sources */,
 				09CB783E26FBD0E20074CC50 /* Moya+Combine.swift in Sources */,
@@ -1186,6 +1210,7 @@
 				0922D26E26FB6E0E0041C0F8 /* SceneDelegate.swift in Sources */,
 				09CB784126FBD1410074CC50 /* HTTPStatusCode.swift in Sources */,
 				09CB785A26FBE8E80074CC50 /* Encodable+Dict.swift in Sources */,
+				09164DE52700A8AE00D31982 /* ShimmerView.swift in Sources */,
 				0922D2A526FB72C80041C0F8 /* R.generated.swift in Sources */,
 				092B6FE126FE4CA20036C859 /* RepoApi+Moya.swift in Sources */,
 				09CB785226FBE2710074CC50 /* AuthorizationApi.swift in Sources */,
@@ -1231,7 +1256,6 @@
 				09349AC4270068B100AD9B78 /* Logger.swift in Sources */,
 				09349AC5270068B100AD9B78 /* AccessToken.swift in Sources */,
 				09349AC6270068B100AD9B78 /* GithubConstants.swift in Sources */,
-				09349AC7270068B100AD9B78 /* ViewController.swift in Sources */,
 				09349AC8270068B100AD9B78 /* AuthorizationApi+Moya.swift in Sources */,
 				09349AC9270068B100AD9B78 /* SecureStoreQueryable.swift in Sources */,
 				09349ACA270068B100AD9B78 /* UserApi+Moya.swift in Sources */,
@@ -1302,14 +1326,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0922D27126FB6E0E0041C0F8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0922D27226FB6E0E0041C0F8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0922D27626FB6E0F0041C0F8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

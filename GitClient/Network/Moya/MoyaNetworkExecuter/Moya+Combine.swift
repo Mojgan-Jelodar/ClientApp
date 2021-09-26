@@ -1,6 +1,5 @@
 //
 //  ReloginPublisher.swift
-//  Blu
 //
 //  Created by jelodar on 6/16/1400 AP.
 //

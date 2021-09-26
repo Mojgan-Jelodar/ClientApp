@@ -1,6 +1,5 @@
 //
 //  File.swift
-//  Blu
 //
 //  Created by Mozhgan on 8/30/21.
 //
