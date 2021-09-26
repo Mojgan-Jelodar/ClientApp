@@ -45,7 +45,7 @@ extension Dashboard {
                 }
 
             }, receiveValue: { [weak self] response in
-                self?.getRepos(username: response.username)
+                self?.getRepos(username: response.login ?? "")
                 self?.presenter?.fetched(user: .success(value: response))
             }).store(in: &subscriber)
 

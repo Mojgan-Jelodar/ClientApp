@@ -15,8 +15,8 @@ struct Repo {
 extension Repo : ModelMapping {
     typealias S = RepoResponse
     init(object: RepoResponse) {
-        self.init(id: object.id,
-                  name: object.name,
-                  description: object.description)
+        self.init(id: object.id ?? 0,
+                  name: object.name ?? "-",
+                  description: object.repoDescription ?? "")
     }
 }

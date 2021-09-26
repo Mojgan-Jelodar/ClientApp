@@ -18,12 +18,12 @@ struct User {
 extension User : ModelMapping {
     typealias S = UserResponse
     init(object: UserResponse) {
-        self.init(id: object.id,
-                  avatarUrl: object.avatarUrl,
-                  username: object.username,
-                  name: object.name,
-                  email: object.email,
-                  followers: object.followers,
-                  following: object.following)
+        self.init(id: object.id ?? 0,
+                  avatarUrl: object.avatarURL ?? "",
+                  username: object.login ?? "-",
+                  name: object.name ?? "-",
+                  email: object.email ?? "-",
+                  followers: object.followers ?? 0,
+                  following: object.following ?? 0)
     }
 }
