@@ -30,7 +30,7 @@ Clean Swift (a.k.a VIP) is Uncle Bob’s Clean Architecture applied to iOS and M
 - Models
   - This component encapsulates the request, response and viewmodel representation for each flow of action of the scene.
 - Router
- - This element is linked to the controller. It takes care of the transition between scenes 
+  - This element is linked to the controller. It takes care of the transition between scenes 
 
 ![Vip](https://www.netguru.com/hs-fs/hubfs/894db5a4-4fdf-4928-b887-07836f7ec843.jpeg?width=1604&name=894db5a4-4fdf-4928-b887-07836f7ec843.jpeg)
 
