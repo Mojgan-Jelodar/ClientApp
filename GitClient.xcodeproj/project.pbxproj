@@ -78,6 +78,7 @@
 		0956396A26FCFC0500C078DF /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956396926FCFC0500C078DF /* DashboardInteractor.swift */; };
 		0956396C26FCFC6F00C078DF /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956396B26FCFC6F00C078DF /* DashboardRouter.swift */; };
 		0956396E26FCFCDC00C078DF /* DashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956396D26FCFCDC00C078DF /* DashboardBuilder.swift */; };
+		09C7105627010D7D003DD84A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 09C7105527010D7D003DD84A /* README.md */; };
 		09CB783026FBCA920074CC50 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB782F26FBCA920074CC50 /* Logger.swift */; };
 		09CB783226FBCB040074CC50 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB783126FBCB040074CC50 /* Loggable.swift */; };
 		09CB783A26FBCFB70074CC50 /* CombineMoyaNetworkExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB783926FBCFB70074CC50 /* CombineMoyaNetworkExecuter.swift */; };
@@ -188,6 +189,7 @@
 		0956396926FCFC0500C078DF /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
 		0956396B26FCFC6F00C078DF /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
 		0956396D26FCFCDC00C078DF /* DashboardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardBuilder.swift; sourceTree = "<group>"; };
+		09C7105527010D7D003DD84A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		09CB782F26FBCA920074CC50 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		09CB783126FBCB040074CC50 /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
 		09CB783926FBCFB70074CC50 /* CombineMoyaNetworkExecuter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineMoyaNetworkExecuter.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 		0922D25F26FB6E0E0041C0F8 = {
 			isa = PBXGroup;
 			children = (
+				09C7105527010D7D003DD84A /* README.md */,
 				0922D26A26FB6E0E0041C0F8 /* GitClient */,
 				0922D28126FB6E0F0041C0F8 /* GitClientTests */,
 				0922D28C26FB6E0F0041C0F8 /* GitClientUITests */,
@@ -802,6 +805,7 @@
 				09164DEA2700A96C00D31982 /* ShimmerTableViewCell.xib in Resources */,
 				09F9B7BF26FF9FF80003085B /* Dashboard.stringsdict in Resources */,
 				0922D27526FB6E0F0041C0F8 /* Assets.xcassets in Resources */,
+				09C7105627010D7D003DD84A /* README.md in Resources */,
 				09349B1027006A9800AD9B78 /* User.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1041,7 +1045,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1098,7 +1102,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1117,11 +1121,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2A7E3G2ZY9;
 				INFOPLIST_FILE = GitClient/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				"OTHER_SWIFT_FLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.organization.GitClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1139,11 +1144,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2A7E3G2ZY9;
 				INFOPLIST_FILE = GitClient/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.organization.GitClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
