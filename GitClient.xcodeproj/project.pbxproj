@@ -131,6 +131,7 @@
 		09349B1127006D8A00AD9B78 /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 09349B0F27006A9800AD9B78 /* User.json */; };
 		09349B162700705500AD9B78 /* Repos.json in Resources */ = {isa = PBXBuildFile; fileRef = 09349B1327006F3F00AD9B78 /* Repos.json */; };
 		09349B172700705700AD9B78 /* Repos.json in Resources */ = {isa = PBXBuildFile; fileRef = 09349B1327006F3F00AD9B78 /* Repos.json */; };
+		09349B1C270082A700AD9B78 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09349B1B270082A700AD9B78 /* Seeds.swift */; };
 		09392D7F26FEF31C00871106 /* Persist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09392D7E26FEF31C00871106 /* Persist.swift */; };
 		09392D8126FEFE8F00871106 /* SecureStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09392D8026FEFE8F00871106 /* SecureStoreError.swift */; };
 		09392D8326FEFEFD00871106 /* SecureStoreQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09392D8226FEFEFD00871106 /* SecureStoreQueryable.swift */; };
@@ -244,6 +245,7 @@
 		09349B0D270068B200AD9B78 /* GitClient copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GitClient copy2-Info.plist"; path = "/Users/mozhgan/Documents/Projects/GitClient/GitClient copy2-Info.plist"; sourceTree = "<absolute>"; };
 		09349B0F27006A9800AD9B78 /* User.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
 		09349B1327006F3F00AD9B78 /* Repos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Repos.json; sourceTree = "<group>"; };
+		09349B1B270082A700AD9B78 /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		09392D7E26FEF31C00871106 /* Persist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persist.swift; sourceTree = "<group>"; };
 		09392D8026FEFE8F00871106 /* SecureStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStoreError.swift; sourceTree = "<group>"; };
 		09392D8226FEFEFD00871106 /* SecureStoreQueryable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStoreQueryable.swift; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 		0922D28126FB6E0F0041C0F8 /* GitClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				09349B1A2700828400AD9B78 /* Seeds */,
 				09349A382700561700AD9B78 /* Dashboard */,
 				09349A372700560100AD9B78 /* Login */,
 				0922D28226FB6E0F0041C0F8 /* GitClientTests.swift */,
@@ -568,6 +571,14 @@
 				09349B1327006F3F00AD9B78 /* Repos.json */,
 			);
 			path = NetworkMockData;
+			sourceTree = "<group>";
+		};
+		09349B1A2700828400AD9B78 /* Seeds */ = {
+			isa = PBXGroup;
+			children = (
+				09349B1B270082A700AD9B78 /* Seeds.swift */,
+			);
+			path = Seeds;
 			sourceTree = "<group>";
 		};
 		09392D7C26FEF2F500871106 /* Common */ = {
@@ -1186,6 +1197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09349A3C270058FF00AD9B78 /* DashboardWorkerSpec.swift in Sources */,
+				09349B1C270082A700AD9B78 /* Seeds.swift in Sources */,
 				0922D28326FB6E0F0041C0F8 /* GitClientTests.swift in Sources */,
 				09349A3A2700563E00AD9B78 /* LoginWorkerSpec.swift in Sources */,
 			);

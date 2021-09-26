@@ -18,15 +18,12 @@ extension Login {
     final class Interactor : LoginBusinessLogic,LoginDataStore {
         var accessToken: String?
         let serviceManager : AuthorizationManager
-        let storage : KeyChainTokenCaretaker
         let presenter : LoginPresentationLogic?
         private var subscriber = Set<AnyCancellable>()
 
-        init(storage : KeyChainTokenCaretaker ,
-             serviceManager : AuthorizationManager,
+        init(serviceManager : AuthorizationManager,
              presenter : LoginPresentationLogic) {
             self.serviceManager = serviceManager
-            self.storage = storage
             self.presenter = presenter
         }
         func requestForAccessToken(code: String) {
@@ -38,9 +35,10 @@ extension Login {
                     self?.presenter?.fetched(accessToken: .failure(error: error))
                 }
             }, receiveValue: {[weak self] response in
+                GitHubCredintial.shared.accessToken = response.asccessToken
                 self?.accessToken = response.asccessToken
-                try? self?.storage.save(data: TokenMomento(accessToken: response.asccessToken))
                 self?.presenter?.fetched(accessToken: .success(value: response))
+                NotificationCenter.default.post(name: .isAuthorized, object: nil)
             }).store(in: &subscriber)
         }
     }

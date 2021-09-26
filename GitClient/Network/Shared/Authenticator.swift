@@ -28,39 +28,28 @@ struct AppReloginHandler: ReloginView {
 }
 
 protocol Authenticator {
-    associatedtype S
-    func sessionIsExpired(using subject: S)
-    func tokenSubject() -> S
+    func sessionIsExpired()
 }
 
 final class AppAuthenticator : Authenticator {
-    private var tokenSubjects : [S] = []
+
     private var isAuthorizing = false
     private var loginView : ReloginView
     private var cancellable: AnyCancellable?
-    typealias S = CurrentValueSubject<Bool, Never>
 
     init(loginView : ReloginView) {
         self.loginView = loginView
         cancellable = NotificationCenter.Publisher(center: .default, name: .isAuthorized, object: nil)
             .subscribe(on: RunLoop.main)
-            .sink { [weak self] _ in
+            .sink(receiveValue: { [weak self] _ in
                 self?.isAuthorizing = false
-                self?.tokenSubjects.forEach({$0.send(true)
             })
-        }
     }
-
-    func sessionIsExpired(using subject: S) {
-        tokenSubjects.append(subject)
+    func sessionIsExpired() {
         guard !isAuthorizing else {
             return
         }
         isAuthorizing = true
         self.loginView.present()
-    }
-
-    func tokenSubject() -> CurrentValueSubject<Bool, Never> {
-        return CurrentValueSubject(true)
     }
 }

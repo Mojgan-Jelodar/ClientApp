@@ -11,9 +11,16 @@ final class GitHubCredintial {
     static let shared = GitHubCredintial()
 
     private let keyChainTokenManager = KeyChainTokenCaretaker()
-    let accessToken : String?
+    var accessToken : String? = nil {
+        didSet {
+            guard let value = accessToken else {
+                return
+            }
+            try? keyChainTokenManager.save(data: TokenMomento(accessToken: value))
+        }
+    }
     private init() {
-      self.accessToken = try? keyChainTokenManager.load()?.accessToken ?? ""
+      self.accessToken = try? keyChainTokenManager.load()?.accessToken ?? nil
     }
 }
 

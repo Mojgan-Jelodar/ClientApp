@@ -145,7 +145,7 @@ extension RepoResponse {
     init(fromURL url: URL) throws {
         try self.init(data: try Data(contentsOf: url))
     }
-
+    // swiftlint:disable function_body_length
     func with(
         id: Int?? = nil,
         nodeID: String?? = nil,
@@ -301,6 +301,7 @@ extension RepoResponse {
             permissions: permissions ?? self.permissions
         )
     }
+    // swiftlint:enable function_body_length
 
     func jsonData() throws -> Data {
         return try newJSONEncoder().encode(self)

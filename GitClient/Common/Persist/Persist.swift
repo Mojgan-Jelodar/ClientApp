@@ -33,9 +33,6 @@ class KeyChainTokenCaretaker : Storage {
         return "GitHubAccessToken"
     }
 
-    var keyName: String {
-        return "GitHubAccessToken"
-    }
     func save(data: TokenMomento) throws {
         guard let value = data.accessToken.data(using: .utf8) else {
             throw SecureStoreError.string2DataConversionError
@@ -88,6 +85,15 @@ class KeyChainTokenCaretaker : Storage {
         default:
           throw error(from: status)
         }
+    }
+
+    public func removeValue() throws {
+      var query = self.query
+      query[String(kSecAttrAccount)] = name
+      let status = SecItemDelete(query as CFDictionary)
+      guard status == errSecSuccess || status == errSecItemNotFound else {
+        throw error(from: status)
+      }
     }
 
     private func error(from status: OSStatus) -> SecureStoreError {

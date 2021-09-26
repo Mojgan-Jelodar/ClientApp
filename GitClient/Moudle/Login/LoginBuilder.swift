@@ -34,8 +34,7 @@ extension Login {
                              configuration: SFSafariViewController.Configuration())
             let presenter = Login.Presenter()
             presenter.viewcontroller = vc
-            let interactor = Login.Interactor(storage: KeyChainTokenCaretaker(),
-                                              serviceManager: MoyaAuthorizationManager(),
+            let interactor = Login.Interactor(serviceManager: MoyaAuthorizationManager(),
                                               presenter: presenter)
             let router = Login.Router(viewController: vc)
             router.store = interactor

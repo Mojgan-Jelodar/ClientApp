@@ -7,66 +7,85 @@
 
 import Quick
 import Nimble
-import Mockingjay
+import Combine
 
-@testable import GitClient
+@testable import GitClientTDD
+
 class DashboardWorkerSpec: QuickSpec {
     override func spec() {
-        var sut : UserManager
+        var profileWorker : UserManager
+        var repoWorker : RepoManager
+        var describer = Set<AnyCancellable>()
         var networkStub: Stub!
         beforeEach {
-            setupWorker()
+           profileWorker = MoyaUserManager()
+           repoWorker = MoyaRepoManager()
         }
-
         afterEach {
-            removeNetworkStub()
-            sut = nil
+            profileWorker = nil
+            repoWorker = nil
         }
-
-        describe("fetch user data") {
-            typealias UserData = (name: String?, email: String?)
-            var actual: UserData = ("", "")
-
-            beforeEach {
-                // given
-                stubNetwork(as: ["name": Seeds.name, "email": Seeds.email])
-
-                // when
-                sut.fetchUserData(completion: { (name, email) in
-                    actual.name = name
-                    actual.email = email
-                })
-            }
-
-            it("should display the fetched user name", closure: {
-                // then
-                expect(actual.name).toEventually(equal(Seeds.name))
-            })
-
-            it("should display the fetched user email", closure: {
-                // then
-                expect(actual.email).toEventually(equal(Seeds.email))
-            })
-        }
-
+        self.fetchUserProfile()
+        self.fetchRepos()
     }
 
 }
-// MARK: - Test Helpers
 extension DashboardWorkerSpec {
+    func fetchUserProfile() {
+        describe("fetch user data") {
+            var actualUser: User?
+            var fetchError: Error?
 
-    func setupWorker() {
-        sut = MainWorker()
+            beforeEach {
+                profileWorker.getProfile().sink(receiveCompletion : { completion in
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        error = fetchError
+                    }
+                }, receiveValue: { response in
+                    actualUser = response
+                }).store(in: &describer)
+
+            }
+            it("should display the fetched user name", closure: {
+                // then
+                expect(actual.name).toEventually(equal(Seeds.User.name))
+            })
+            it("should display the fetched user email", closure: {
+                // then
+                expect(actual.email).toEventually(equal(Seeds.User.email))
+            })
+        }
     }
 
-    func stubNetwork(as response: [String: String] = [:], status: Int = 200) {
-        networkStub = stub(everything, json(response, status: status))
-    }
+    func fetchRepos() {
+        describe("fetch repos data") {
+            var actualRepos: ReposResponse?
+            var fetchError: Error?
 
-    func removeNetworkStub() {
-        if let stub = networkStub {
-            removeStub(stub)
-            networkStub = nil
+            beforeEach {
+                repoWorker.getRepos(params: RepoRequest(username: "mozhgan")).sink(receiveCompletion : { completion in
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        error = fetchError
+                    }
+                }, receiveValue: { response in
+                    actualUser = response
+                }).store(in: &describer)
+
+            }
+            it("should display the fetched first repo name", closure: {
+                // then
+                expect(actualRepos?.first?.name).toEventually(equal(Seeds.Repo.name))
+            })
+            it("should display the fetched first repo id", closure: {
+                // then
+                expect(actualRepos?.first?.id).toEventually(equal(Seeds.Repo.id))
+            })
         }
     }
 }
